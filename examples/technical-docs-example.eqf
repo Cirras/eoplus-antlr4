@@ -1,0 +1,59 @@
+// This quest was released as an example in technical documentation on the Endless Online website.
+// See: https://web.archive.org/web/20110725220339/http://www.endless-online.com/eo+.html
+
+Main
+{
+	questname 	"Pjedro's Potion Quest"
+	version		2.0
+}
+
+state Begin
+{
+	desc		"Talk to Pjedro"
+
+	action		AddNpcText( 1 , "Hello , I am pjedro the only wizzard" );
+	action		AddNpcText( 1 , "I really need some green potions..");
+	action		AddNpcChat( 1 , "Please help me find 10 green potions?");
+
+	action		AddNpcInput( 1 , 1 , "No, this stuff scares me");
+	action		AddNpcInput( 1 , 2 , "Sure, i will help you");
+
+	rule 		InputNpc( 1 ) goto Lose
+	rule 		InputNpc( 2 ) goto FindPotions
+}
+
+state FindPotions
+{ 
+	desc		"Find 10 green potions" 
+	rule 		GotItems( 5 , 10 ) goto GetReward
+
+}
+
+state GetReward
+{
+	desc		"Talk to Pjedro for reward"
+	action		ShowHint("You got all the items needed!");
+
+	action		AddNpcText( 1 , "Did you find my green potions?");
+	action		AddNpcInput( 1 , 1 , "No thank you, find your own");
+	action		AddNpcInput( 1 , 2 , "Sure, here you are");
+
+	rule 		InputNpc( 1 ) goto Lose;
+	rule 		InputNpc( 2 ) goto Reward;
+
+	rule 		LostItems( 5 , 10 ) goto FindPotions
+}
+
+state Reward{ 
+
+	action		RemoveItem( 5 , 10)
+	action		GiveItem( 374 );
+	action		Reset();
+}
+
+state Lose{ 
+
+	action		ShowHint("You are a coward!");
+	action		Reset(); 
+
+}
