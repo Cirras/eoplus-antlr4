@@ -1,8 +1,10 @@
-# EO+ ANTLR4 Grammar
+# EO+ ANTLR4 Grammar (EOSERV)
 
-[![test](https://github.com/Cirras/eoplus-antlr4/actions/workflows/test.yml/badge.svg?event=push)](https://github.com/Cirras/eoplus-antlr4/actions/workflows/test.yml)
+[![test](https://github.com/Cirras/eoplus-antlr4/actions/workflows/test.yml/badge.svg?event=push&branch=eoserv)](https://github.com/Cirras/eoplus-antlr4/actions/workflows/test.yml)
 
 An ANTLR4 grammar for the EO+ quest scripting language from Endless Online.
+
+This branch covers the EOSERV flavor of the EO+ syntax.
 
 ## Branches
 
