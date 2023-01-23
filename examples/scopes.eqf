@@ -1,0 +1,12 @@
+Main
+{
+	questname 	"scopes"
+	version		1.0
+}
+
+state Scopes
+{
+	desc		"Test scopes"
+
+	action		character.npc.map.world.AddNpcText(1, "EOSERV completely ignores these scopes...");
+}
