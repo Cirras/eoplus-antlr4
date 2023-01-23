@@ -18,15 +18,27 @@ The following syntax structures are supported:
 - `main` block
   - `questname` attribute
   - `version` attribute
+  - `hidden` attribute
+  - `hidden_end` attribute
+  - `disabled` attribute
 - `state` block
   - `desc` statement
   - `action` statement
+  - `if` statement
+  - `elseif`/`elif` statement
+  - `else` statement
   - `rule` statement
+  - `goal` statement
 - Expressions
   - String literals
   - Integer literals
+- Scopes
+  - `character`
+  - `npc`
+  - `map`
+  - `world`
 - Identifiers
-  - of the form `[_a-zA-Z][_a-zA-Z0-9]*`
+  - of the form `[$_a-zA-Z][$_a-zA-Z0-9]*`
 
 ### Differences
 
