@@ -20,6 +20,9 @@ mainBlock
 mainAttribute
     :   nameAttribute
     |   versionAttribute
+    |   hiddenAttribute
+    |   hiddenEndAttribute
+    |   disabledAttribute
     ;
 
 nameAttribute
@@ -28,6 +31,18 @@ nameAttribute
 
 versionAttribute
     :   VERSION version
+    ;
+
+hiddenAttribute
+    :   HIDDEN_
+    ;
+
+hiddenEndAttribute
+    :   HIDDEN_END
+    ;
+
+disabledAttribute
+    :   DISABLED
     ;
 
 version
@@ -41,7 +56,11 @@ stateBlock
 statement
     :   desc
     |   action
+    |   if
+    |   elseif
+    |   else
     |   rule
+    |   goal
     ;
 
 desc
@@ -49,11 +68,27 @@ desc
     ;
 
 action
-    :   ACTION Identifier argumentList
+    :   ACTION expression
     ;
 
 rule
-    :   RULE Identifier argumentList GOTO Identifier
+    :   RULE guard=expression expression
+    ;
+
+goal
+    :   GOAL guard=expression expression
+    ;
+
+if
+    :   IF guard=expression expression
+    ;
+
+elseif
+    :   (ELSEIF | ELIF) guard=expression expression
+    ;
+
+else
+    :   ELSE expression
     ;
 
 argumentList
@@ -61,10 +96,34 @@ argumentList
     ;
 
 arguments
-    :   expression (COMMA expression)*
+    :   argumentExpression (COMMA argumentExpression)*
     ;
 
 expression
+    :   invocationExpression
+    |   gotoExpression
+    ;
+
+invocationExpression
+    :   scopes? Identifier argumentList
+    ;
+
+gotoExpression
+    :   scopes? GOTO Identifier
+    ;
+
+scopes
+    :   (scope DOT)+
+    ;
+
+scope
+    :   CHARACTER
+    |   NPC
+    |   MAP
+    |   WORLD
+    ;
+
+argumentExpression
     :   literal
     ;
 
