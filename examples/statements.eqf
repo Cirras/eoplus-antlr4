@@ -1,50 +1,50 @@
 Main
 {
-	questname 	"statements"
-	version		1.0
+    questname   "statements"
+    version     1.0
 }
 
 state IfStatement
 {
-	desc		"Test if statement"
+    desc        "Test if statement"
 
-	if			GotItems(123)
-				ShowHint("The player has item 123.")
+    if          GotItems(123)
+                ShowHint("The player has item 123.")
 }
 
 state ElseifStatement
 {
-	desc		"Test elseif statement"
+    desc        "Test elseif statement"
 
-	elseif		GotItems(456)
-				ShowHint("The player has item 456.")
+    elseif      GotItems(456)
+                ShowHint("The player has item 456.")
 }
 
 state ElifStatement
 {
-	desc		"Test elif statement"
+    desc        "Test elif statement"
 
-	elif		GotItems(789)
-				ShowHint("The player has item 789.")
+    elif        GotItems(789)
+                ShowHint("The player has item 789.")
 }
 
 state ElseStatement
 {
-	desc		"Test else statement"
+    desc        "Test else statement"
 
-	else		ShowHint("This hint will always be shown.")
+    else        ShowHint("This hint will always be shown.")
 }
 
 state ChainedStatements
 {
-	desc		"Test chained statements"
+    desc        "Test chained statements"
 
-	if			GotItems(123)
-				ShowHint("The player has item 123.")
-	elseif		GotItems(456)
-				ShowHint("The player has item 456.")
-	elif		GotItems(789)
-				ShowHint("The player has item 789.")
-	else
-				ShowHint("The player did not have item 123, 456, or 789.")
+    if          GotItems(123)
+                ShowHint("The player has item 123.")
+    elseif      GotItems(456)
+                ShowHint("The player has item 456.")
+    elif        GotItems(789)
+                ShowHint("The player has item 789.")
+    else
+                ShowHint("The player did not have item 123, 456, or 789.")
 }

@@ -1,8 +1,8 @@
 Main
 {
-	questname 	"attributes"
-	version		1.0
-	hidden
-	hidden_end
-	disabled
+    questname   "attributes"
+    version     1.0
+    hidden
+    hidden_end
+    disabled
 }

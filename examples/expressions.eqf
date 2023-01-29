@@ -1,34 +1,34 @@
 Main
 {
-	questname 	"expressions"
-	version		1.0
+    questname   "expressions"
+    version     1.0
 }
 
 state RuleExpressions
 {
-	desc		"Test action expressions in rules."
+    desc        "Test action expressions in rules."
 
-	rule		GotItems(123) ShowHint("Player has item 123.")
+    rule        GotItems(123) ShowHint("Player has item 123.")
 }
 
 state ActionGoto
 {
-	desc		"Test goto usage in action expressions."
+    desc        "Test goto usage in action expressions."
 
-	action		goto Foo
+    action      goto Foo
 }
 
 state GuardExpressionGoto
 {
-	desc		"Test silly goto usages in guard expressions."
+    desc        "Test silly goto usages in guard expressions."
 
-	rule		goto Foo
-				ShowHint("Foo")
+    rule        goto Foo
+                ShowHint("Foo")
 
-	if			goto Bar
-				ShowHint("Bar")
-	elseif		goto Baz
-				ShowHint("Baz")
-	elif		goto Flarp
-				ShowHint("Flarp")
+    if          goto Bar
+                ShowHint("Bar")
+    elseif      goto Baz
+                ShowHint("Baz")
+    elif        goto Flarp
+                ShowHint("Flarp")
 }
