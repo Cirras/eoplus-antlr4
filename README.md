@@ -38,7 +38,7 @@ The following syntax structures are supported:
   - `map`
   - `world`
 - Identifiers
-  - of the form `[$_a-zA-Z][$_a-zA-Z0-9]*`
+  - of the form `[$_a-zA-Z][_a-zA-Z0-9]*`
 
 ### Differences
 
