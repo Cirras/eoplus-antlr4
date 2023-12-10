@@ -128,6 +128,6 @@ argumentExpression
     ;
 
 literal
-    :	IntegerLiteral
-    |	StringLiteral
+    :   IntegerLiteral
+    |   StringLiteral
     ;
