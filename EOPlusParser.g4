@@ -69,6 +69,6 @@ expression
     ;
 
 literal
-    :	IntegerLiteral
-    |	StringLiteral
+    :   IntegerLiteral
+    |   StringLiteral
     ;

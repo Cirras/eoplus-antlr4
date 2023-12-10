@@ -58,22 +58,22 @@ DOT : '.';
 //
 
 IntegerLiteral
-    : [0-9]+
+    :   [0-9]+
     ;
 
 StringLiteral
-    :	'"' StringCharacter* '"'
+    :   '"' StringCharacter* '"'
     ;
 
 fragment
 StringCharacter
-    :	~["\\\r\n]
-    |	EscapeSequence
+    :   ~["\\\r\n]
+    |   EscapeSequence
     ;
 
 fragment
 EscapeSequence
-    :	'\\' ~[\r\n]
+    :   '\\' ~[\r\n]
     ;
 
 //
@@ -81,14 +81,14 @@ EscapeSequence
 //
 
 Identifier
-    :	[$_a-zA-Z][_a-zA-Z0-9]*
+    :   [$_a-zA-Z][_a-zA-Z0-9]*
     ;
 
 //
 // Whitespace and comments
 //
 
-WS  :  [ \t\r\n\u000C]+ -> skip
+WS  :   [ \t\r\n\u000C]+ -> skip
     ;
 
 LINE_COMMENT
